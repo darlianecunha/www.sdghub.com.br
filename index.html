@@ -1,221 +1,174 @@
 <!DOCTYPE html>
-
-<html lang="en-GB">
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Articles — Darliane R. Cunha</title>
-<meta content="Page presenting scientific articles with abstracts in English. Ports, sustainability and SDGs." name="description"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SDG Hub</title>
+  <style>
     :root{
-      --bg:#0b1020;
-      --card:#111731;
-      --muted:#9fb0d3;
-      --primary:#7aa2ff;
-      --accent:#9bffef;
-      --ink:#e9f0ff;
-      --chip:#1a2243;
+      --blue-900:#0a3550;
+      --blue-700:#0f5e8c;
+      --blue-300:#3aa0e6;
+      --blue-100:#f2f7fb;
+      --ink:#0b2030;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1000px;margin:0 auto;padding:28px}
-    header{background:linear-gradient(135deg,#152250, #0e1632);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 40px rgba(0,0,0,.35);border-radius:18px;padding:28px 24px;margin:18px 0 26px}
-    h1{margin:0 0 8px;font-weight:700;letter-spacing:.2px}
-    .sub{margin:0;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:1fr;gap:18px}
-    @media (min-width:860px){ .grid{grid-template-columns:1fr 1fr} }
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
-    .title{font-size:1.05rem;margin:.2rem 0 .4rem;font-weight:600}
-    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-    .chip{background:var(--chip);border:1px solid rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;font-size:.8rem;color:var(--muted)}
-    .journal{color:var(--ink)}
-    .issn{opacity:.8}
-    .year{background:rgba(122,162,255,.13);border:1px solid rgba(122,162,255,.35);color:#cfe0ff}
-    details{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.15);border-radius:14px;padding:12px 14px}
-    summary{cursor:pointer;font-weight:600;color:var(--primary)}
-    .lang{font-size:.82rem;color:var(--muted);margin-left:6px}
-    .sdgs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 2px}
-    .sdg{font-size:.75rem;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);color:#cfe0ff}
-    footer{opacity:.8;color:var(--muted);margin:28px 0 8px;text-align:center}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.02);color:var(--ink);text-decoration:none}
-    .btn:hover{background:rgba(255,255,255,.06)}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:.86rem}
-    .kw{margin-top:10px;font-size:.9rem;color:var(--muted)}
-  
-    .doi-box {
-        display: inline-block;
-        padding: 6px 10px;
-        margin: 6px 0;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.25);
-        border-radius: 8px;
-        font-family: ui-monospace, monospace;
-        color: #a6ffe1;
-        text-decoration: none;
-    }
-    .doi-box:hover {
-        background: rgba(255,255,255,0.2);
-    }
-    
-    .kw-chips {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin: 8px 0 2px;
-    }
-    .kw-chip {
-        font-size: .75rem;
-        padding: 3px 8px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,.22);
-        background: rgba(255,255,255,.08);
-        color: #ffffff;
-        white-space: nowrap;
-    }
-    
-.byline {
-  margin: 0 0 6px;
-  font-weight: 600;
-  letter-spacing: .2px;
-  color: var(--ink, #fff);
-  opacity: .95;
-}
-
-.byline {
-  margin: 0 0 10px;
-  font-size: 1.9rem;
-  font-weight: 700;
-  letter-spacing: .3px;
-  color: var(--ink, #fff);
-}
-</style>
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--blue-100)}
+    header{background:linear-gradient(90deg,#0f5e8c,#1380c9);color:#fff}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand h1{font-size:1.45rem;margin:0;line-height:1.1}
+    .brand p{margin:2px 0 0;font-size:.95rem;opacity:.95}
+    nav{background:var(--blue-700)}
+    nav .wrap{justify-content:center;gap:24px;flex-wrap:wrap}
+    nav a{color:#fff;text-decoration:none;font-weight:600;padding:10px 6px;border-bottom:3px solid transparent}
+    nav a.active,nav a:hover{border-color:#fff}
+    main{max-width:1100px;margin:20px auto;padding:0 20px}
+    section{display:none;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 24px rgba(13,45,76,.06)}
+    section.active{display:block}
+    .bubble{background:#fff;border:1px solid #e5eef6;border-radius:12px;padding:22px;font-size:1.15rem;line-height:1.6}
+    .pill{display:inline-block;background:#e9f3fb;border:1px solid #d6e9f7;border-radius:999px;padding:6px 10px;margin:4px 6px 0 0;font-size:.95rem}
+    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:#f7fbff;border:1px solid #e3eef8;border-radius:12px;padding:18px}
+    .card h3{margin:0 0 6px 0}
+    form{display:grid;gap:12px;max-width:440px}
+    input,textarea{padding:12px;border:1px solid #d9e4ee;border-radius:10px;background:#fff}
+    button{background:#0f5e8c;color:#fff;border:0;border-radius:10px;padding:12px 16px;cursor:pointer;font-weight:700}
+    button:hover{filter:brightness(1.05)}
+    footer{margin:28px 0 0;background:var(--blue-900);color:#fff}
+    footer .wrap{justify-content:center;padding:16px 20px}
+    .logo-svg{width:72px;height:72px} /* enlarged */
+  </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-<div class="topbar">
-<div>
-<h1 class="byline">Professor Dr Darliane Ribeiro Cunha</h1><h1>Selected Articles</h1>
-</div>
-<nav>
-<a class="btn" href="#marine-policy">Marine Policy</a>
-<a class="btn" href="#rsms">Regional Studies in Marine Science</a>
-<a class="btn" href="#rgsa">Revista de Gestão – RGSA</a>
-<a class="btn" href="#gesec">Gestão &amp; Secretariado</a>
-<a class="btn" href="#ssho">Social Sciences &amp; Humanities Open</a>
-<a class="btn" href="#eds">Environment, Development and Sustainability</a>
-</nav>
-</div>
-</header>
-<section aria-label="Lista de artigos" class="grid">
-<!-- Article 1 -->
-<article aria-labelledby="t1" class="card" id="marine-policy">
-<div class="meta">
-<span class="chip journal"><strong>Marine Policy</strong> <span class="issn mono">(ISSN 0308-597X)</span></span>
-<span aria-label="Ano de publicação" class="chip year">2025</span>
-</div>
-<h2 class="title" id="t1">SDG attributes: A sustainability assessment framework for Brazilian ports</h2>
-<div aria-label="ODS relacionados" class="sdgs">
-<span class="sdg">SDG 7</span><span class="sdg">SDG 8</span><span class="sdg">SDG 9</span><span class="sdg">SDG 11</span><span class="sdg">SDG 12</span><span class="sdg">SDG 13</span><span class="sdg">SDG 14</span><span class="sdg">SDG 17</span>
-</div>
-<div class="kw-chips"><span class="kw-chip">Port sustainability</span><span class="kw-chip">Sustainable Development Goals (SDGs)</span><span class="kw-chip">Sustainability indicators</span><span class="kw-chip">Port resilience</span><span class="kw-chip">Sustainable port development</span><span class="kw-chip">Maritime policy</span></div>
-<p><a class="doi-box" href="https://doi.org/10.1016/j.marpol.2025.106841" rel="noopener" target="_blank">https://doi.org/10.1016/j.marpol.2025.106841</a></p>
-<details open="">
-<summary>Abstract</summary>
-<p>This study develops and applies a sustainability index tailored to the port sector, aligned with eight SDGs. The framework combines 20 thematic dimensions and 84 indicators, offering a quantitative assessment of port sustainability performance. Applied to six major Brazilian ports, it revealed strong results in partnerships (SDG 17) and responsible consumption (SDG 12), but gaps in climate action (SDG 13) and clean energy adoption (SDG 7). The model provides practical guidance for port authorities and policymakers to strengthen governance, resilience, and sustainability strategies.</p>
-</details>
-</article>
-<!-- Article 2 -->
-<article aria-labelledby="t2" class="card" id="rsms">
-<div class="meta">
-<span class="chip journal"><strong>Regional Studies in Marine Science</strong> <span class="issn mono">(ISSN 2352-4855)</span></span>
-<span class="chip year">2024</span>
-</div>
-<h2 class="title" id="t2">A Bibliometric Analysis of Sustainable Development Goals in the Maritime Industry and Port Sector</h2>
-<div class="sdgs">
-<span class="sdg">SDG 7</span><span class="sdg">SDG 9</span><span class="sdg">SDG 11</span><span class="sdg">SDG 12</span><span class="sdg">SDG 13</span><span class="sdg">SDG 14</span><span class="sdg">SDG 8</span><span class="sdg">SDG 17</span>
-</div>
-<div class="kw-chips"><span class="kw-chip">Sustainable Development Goals</span><span class="kw-chip">Sustainability</span><span class="kw-chip">Environmental sustainability</span><span class="kw-chip">Maritime industry</span><span class="kw-chip">Ports</span></div>
-<p><a class="doi-box" href="https://doi.org/10.1016/j.rsma.2023.103319" rel="noopener" target="_blank">https://doi.org/10.1016/j.rsma.2023.103319</a></p>
-<details>
-<summary>Abstract</summary>
-<p>This article conducts a comprehensive literature review on SDG-related research in the maritime and port industries. Using IRaMuTeQ and VOSviewer, it identifies key themes such as port–city models, circular economy, blue economy, and energy efficiency. Results show a strong European focus, reflecting the region’s academic prominence and extensive port network. Despite growth in publications, the study highlights a persistent gap in aligning port operations with the ambitions of the 2030 Agenda, indicating opportunities for further exploration in governance and policy.</p>
-</details>
-</article>
-<!-- Article 3 -->
-<article aria-labelledby="t3" class="card" id="rgsa">
-<div class="meta">
-<span class="chip journal"><strong>Revista De Gestão – RGSA</strong> <span class="issn mono">(ISSN 1981-982X)</span></span>
-<span class="chip year">2024</span>
-</div>
-<h2 class="title" id="t3">Sustainable Practices in Brazilian Ports: Aligning with SDGs 9, 13, and 14</h2>
-<div class="sdgs">
-<span class="sdg">SDG 9</span><span class="sdg">SDG 13</span><span class="sdg">SDG 14</span>
-</div>
-<div class="kw-chips"><span class="kw-chip">Sustainable Development Goals</span><span class="kw-chip">Innovation</span><span class="kw-chip">Climate action</span><span class="kw-chip">Marine life</span><span class="kw-chip">Port sector</span></div>
-<p><a class="doi-box" href="https://doi.org/10.24857/rgsa.v18n11-096" rel="noopener" target="_blank">https://doi.org/10.24857/rgsa.v18n11-096</a></p>
-<details>
-<summary>Abstract</summary>
-<p>This research assesses the implementation of SDG 14 in Brazilian ports through eight in-depth interviews. The findings highlight initiatives such as ISO 14001 certification, water quality monitoring, waste management, and environmental education programmes. Partnerships with academia and regulators and adherence to the UN Global Compact reinforce this progress. However, challenges remain in noise monitoring, biodiversity conservation, and the use of eDNA tools. The study recommends improved environmental reporting standards and the adoption of SMART targets to strengthen alignment with marine conservation goals.</p>
-</details>
-</article>
-<!-- Article 4 -->
-<article aria-labelledby="t4" class="card" id="gesec">
-<div class="meta">
-<span class="chip journal"><strong>Revista Gestão &amp; Secretariado</strong> <span class="issn mono">(ISSN 2178-9010)</span></span>
-<span class="chip year">2024</span>
-</div>
-<h2 class="title" id="t4">Challenges and strategies for SDG 14 in Brazilian ports</h2>
-<div class="sdgs">
-<span class="sdg">SDG 14</span>
-</div>
-<div class="kw-chips"><span class="kw-chip">Sustainable Development Goals</span><span class="kw-chip">SDG 14</span><span class="kw-chip">Sustainability</span><span class="kw-chip">Blue economy</span><span class="kw-chip">Ports</span></div>
-<p><a class="doi-box" href="https://doi.org/10.7769/gesec.v15i12.4593" rel="noopener" target="_blank">https://doi.org/10.7769/gesec.v15i12.4593</a></p>
-<details>
-<summary>Abstract</summary>
-<p>This study analyses sustainability disclosures in reports from major Brazilian public and private ports. Evidence shows investments in research, innovation, and technology (SDG 9), actions to cut greenhouse gas emissions and promote energy transition (SDG 13), and limited initiatives related to marine protection (SDG 14). The findings highlight the port sector’s clear commitment to innovation and climate action, while also revealing a need to expand practices addressing biodiversity and marine ecosystems.</p>
-</details>
-</article>
-<!-- Article 5 -->
-<article aria-labelledby="t5" class="card" id="ssho">
-<div class="meta">
-<span class="chip journal"><strong>Social Sciences &amp; Humanities Open</strong> <span class="issn mono">(ISSN 2590-2911)</span></span>
-<span class="chip year">2023</span>
-</div>
-<h2 class="title" id="t5">Photovoltaic electronic waste in Brazil: circular economy challenges, potential and obstacles</h2>
-<div class="sdgs">
-<span class="sdg">SDG 7</span><span class="sdg">SDG 9</span><span class="sdg">SDG 12</span><span class="sdg">SDG 13</span>
-</div>
-<div class="kw-chips"><span class="kw-chip">E-Waste</span><span class="kw-chip">End-of-life photovoltaic</span><span class="kw-chip">Solar panels</span><span class="kw-chip">Renewable energy</span></div>
-<p><a class="doi-box" href="https://doi.org/10.1016/j.ssaho.2023.100456" rel="noopener" target="_blank">https://doi.org/10.1016/j.ssaho.2023.100456</a></p>
-<details>
-<summary>Abstract</summary>
-<p>This article investigates sustainability practices reported by ten Brazilian port authorities managing 17 ports responsible for 76% of national cargo. The study reveals stronger focus on SDG 8 (decent work and economic growth), SDG 11 (sustainable cities and communities), and SDG 14 (life below water). Although the SDGs began to appear in port reports from 2018, by 2020 only four authorities still published such information. Overall, the study shows that the integration of SDGs in Brazilian port governance remains incipient and requires consolidation.</p>
-</details>
-</article>
-<!-- Article 6 -->
-<article aria-labelledby="t6" class="card" id="eds">
-<div class="meta">
-<span class="chip journal"><strong>Environment, Development and Sustainability</strong> <span class="issn mono">(ISSN 1387-585X / e-ISSN 1573-2975)</span></span>
-<span class="chip year">2023</span>
-</div>
-<h2 class="title" id="t6">Sustainability practices for SDGs: a study of Brazilian ports</h2>
-<div class="sdgs">
-<span class="sdg">SDG 7</span><span class="sdg">SDG 8</span><span class="sdg">SDG 9</span><span class="sdg">SDG 11</span><span class="sdg">SDG 12</span><span class="sdg">SDG 13</span><span class="sdg">SDG 14</span>
-</div><div class="kw-chips"><span class="kw-chip">Sustainable development goals</span><span class="kw-chip">Sustainability report</span><span class="kw-chip">Environmental practices</span><span class="kw-chip">Ports</span></div>
-<p><a class="doi-box" href="https://doi.org/10.1007/s10668-023-03126-y" rel="noopener" target="_blank">https://doi.org/10.1007/s10668-023-03126-y</a></p>
-<details>
-<summary>Abstract</summary>
-<p>This article discusses the environmental impacts of end-of-life photovoltaic (PV) panels in Brazil. While PV technology is a mature and promising renewable energy source, discarded panels generate significant electronic waste containing metals and toxic materials. Beyond technological solutions for recycling, the study stresses the importance of regulatory frameworks and public policies to manage industrial waste effectively. It highlights the urgency of integrating circular economy principles to ensure that PV energy contributes to sustainability without creating new environmental burdens.</p>
-</details>
-</article>
-</section>
-<footer>
-<p>© 2025 · GitHub Pages‑ready. Publish this file as index.html.</p>
-</footer>
-</div>
+  <header>
+    <div class="wrap">
+      <!-- Expanded connections SVG -->
+      <svg class="logo-svg" viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#0f5e8c"/>
+            <stop offset="1" stop-color="#3aa0e6"/>
+          </linearGradient>
+        </defs>
+        <!-- core -->
+        <circle cx="60" cy="66" r="16" fill="url(#g)" />
+        <!-- outer ring faint -->
+        <circle cx="60" cy="66" r="42" fill="none" stroke="url(#g)" stroke-opacity=".25" stroke-width="2"/>
+        <g stroke="url(#g)" stroke-width="3" fill="#3aa0e6">
+          <!-- more spokes & nodes -->
+          <line x1="60" y1="66" x2="18" y2="32"/><circle cx="18" cy="32" r="4.2"/>
+          <line x1="60" y1="66" x2="38" y2="20"/><circle cx="38" cy="20" r="3.8"/>
+          <line x1="60" y1="66" x2="62" y2="16"/><circle cx="62" cy="16" r="4.6"/>
+          <line x1="60" y1="66" x2="86" y2="20"/><circle cx="86" cy="20" r="4.1"/>
+          <line x1="60" y1="66" x2="104" y2="36"/><circle cx="104" cy="36" r="4.3"/>
+          <line x1="60" y1="66" x2="110" y2="70"/><circle cx="110" cy="70" r="4.0"/>
+          <line x1="60" y1="66" x2="98" y2="96"/><circle cx="98" cy="96" r="4.2"/>
+          <line x1="60" y1="66" x2="76" y2="108"/><circle cx="76" cy="108" r="4.0"/>
+          <line x1="60" y1="66" x2="44" y2="108"/><circle cx="44" cy="108" r="4.1"/>
+          <line x1="60" y1="66" x2="22" y2="96"/><circle cx="22" cy="96" r="4.0"/>
+          <line x1="60" y1="66" x2="12" y2="68"/><circle cx="12" cy="68" r="3.8"/>
+          <line x1="60" y1="66" x2="20" y2="50"/><circle cx="20" cy="50" r="3.8"/>
+          <!-- inner satellites -->
+          <line x1="60" y1="66" x2="46" y2="44"/><circle cx="46" cy="44" r="3.6"/>
+          <line x1="60" y1="66" x2="78" y2="46"/><circle cx="78" cy="46" r="3.6"/>
+          <line x1="60" y1="66" x2="84" y2="74"/><circle cx="84" cy="74" r="3.6"/>
+          <line x1="60" y1="66" x2="40" y2="82"/><circle cx="40" cy="82" r="3.6"/>
+        </g>
+      </svg>
+      <div class="brand">
+        <div>
+          <h1>SDG Hub</h1>
+          <p>Conectando inovação, pesquisa e sustentabilidade</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#home" class="active" onclick="showSection('home', this)">Home</a>
+      <a href="#equipe" onclick="showSection('equipe', this)">Equipe</a>
+      <a href="#noticias" onclick="showSection('noticias', this)">Notícias</a>
+      <a href="#contato" onclick="showSection('contato', this)">Contato</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="active">
+      <div class="bubble">
+        <h2 style="margin-top:0">Sobre</h2>
+        <p>O SDG Hub é um núcleo colaborativo focado em acelerar soluções alinhadas aos Objetivos de Desenvolvimento Sustentável (ODS), com ênfase em portos, energia e cidades.</p>
+        <div>
+          <span class="pill">Pesquisa aplicada & indicadores</span>
+          <span class="pill">Descarbonização & transição energética</span>
+          <span class="pill">Cidades sustentáveis</span>
+        
+        <div class="card">
+          <h3></h3>
+          <p></p>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <section id="equipe">
+      <h2>Equipe</h2>
+      <div class="team">
+        <div class="card">
+          <h3>Clóvis Bôsco Mendonça Oliveira</h3>
+          <p>Energias Renováveis, OPS e descarbonização em portos.</p>
+          <p><a href="https://scholar.google.com/citations?user=ts10jLQAAAAJ&hl=pt-BR&oi=sra" target="_blank">Google Acadêmico</a></p>
+          <p></p>
+          
+        </div><div class="card">
+          <h3>Darliane Ribeiro Cunha</h3>
+          <p>Fundadora & Pesquisadora. Sustentabilidade e descarbonização em portos.</p>
+          <p><a href="https://www.linkedin.com/in/darlianecunha/" target="_blank">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=BGRlXo0AAAAJ" target="_blank">Scholar</a></p>
+        
+        
+
+      </div>
+    </section>
+
+    <section id="noticias">
+      <h2>Notícias</h2>
+      <div class="bubble">
+        <p>Acompanhe aqui as novidades, publicações e eventos relacionados ao SDG Hub.</p>
+        <ul>
+          <li>[Exemplo] Lançamento de novo projeto de descarbonização em portos – março 2025</li>
+          <li>[Exemplo] Participação na COP 30 em Belém – novembro 2025</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p style="margin-top:10px">Ou escreva para <a href="mailto:info@sdghub.com.br">info@sdghub.com.br</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <small>© 2025 SDG Hub</small>
+    </div>
+  </footer>
+
+  <script>
+    function showSection(id, el){
+      document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      document.querySelectorAll("nav a").forEach(a=>a.classList.remove("active"));
+      if(el) el.classList.add("active");
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+  </script>
 </body>
 </html>
