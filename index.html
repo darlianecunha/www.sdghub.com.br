@@ -3,37 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SDG Hub</title>
+  <title>SDG Hub - Plataforma de Sustentabilidade Portuária</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
       --blue-900:#0a3550;
       --blue-700:#0f5e8c;
       --blue-300:#3aa0e6;
       --blue-100:#f2f7fb;
+      --green-600:#059669;
+      --green-100:#dcfce7;
       --ink:#0b2030;
+      --gray-600:#4b5563;
+      --gray-100:#f3f4f6;
     }
+    
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--blue-100)}
-    header{background:linear-gradient(90deg,#0f5e8c,#1380c9);color:#fff}
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;gap:16px}
+    body{margin:0;font-family:'Gabarito',Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--blue-100);line-height:1.6}
+    
+    /* Header */
+    header{background:linear-gradient(135deg,#0f5e8c,#1380c9,#3aa0e6);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+    .wrap{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;gap:16px}
     .brand{display:flex;align-items:center;gap:14px}
-    .brand h1{font-size:1.45rem;margin:0;line-height:1.1}
-    .brand p{margin:2px 0 0;font-size:.95rem;opacity:.95}
-    nav{background:var(--blue-700)}
-    nav .wrap{justify-content:center;gap:24px;flex-wrap:wrap}
-    nav a{color:#fff;text-decoration:none;font-weight:600;padding:10px 6px;border-bottom:3px solid transparent}
-    nav a.active,nav a:hover{border-color:#fff}
-    main{max-width:1100px;margin:20px auto;padding:0 20px}
-    section{display:none;background:#fff;border-radius:14px;padding:28px;box-shadow:0 8px 24px rgba(13,45,76,.06)}
+    .brand h1{font-size:1.8rem;margin:0;line-height:1.1;font-weight:700}
+    .brand p{margin:2px 0 0;font-size:1rem;opacity:.95;font-weight:300}
+    
+    /* Navigation */
+    nav{background:var(--blue-700);border-top:1px solid rgba(255,255,255,0.1)}
+    nav .wrap{justify-content:center;gap:32px;flex-wrap:wrap;padding:12px 20px}
+    nav a{color:#fff;text-decoration:none;font-weight:600;padding:12px 8px;border-bottom:3px solid transparent;transition:all 0.3s ease;font-size:1rem}
+    nav a.active,nav a:hover{border-color:#fff;transform:translateY(-2px)}
+    
+    /* Hero Section */
+    .hero{background:linear-gradient(135deg,rgba(15,94,140,0.95),rgba(58,160,230,0.95)),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.1)"/></svg>');background-size:cover;color:#fff;text-align:center;padding:80px 20px;margin-bottom:0}
+    .hero h1{font-size:3.5rem;margin:0 0 20px;font-weight:800;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+    .hero p{font-size:1.3rem;max-width:600px;margin:0 auto 40px;opacity:0.95;font-weight:300}
+    .cta-button{display:inline-block;background:var(--green-600);color:#fff;padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(5,150,105,0.3)}
+    .cta-button:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(5,150,105,0.4)}
+    
+    /* Main Content */
+    main{max-width:1200px;margin:0 auto;padding:0 20px}
+    section{display:none;margin:40px 0}
     section.active{display:block}
-    .bubble{background:#fff;border:1px solid #e5eef6;border-radius:12px;padding:22px;font-size:1.15rem;line-height:1.6}
-    .pill{display:inline-block;background:#e9f3fb;border:1px solid #d6e9f7;border-radius:999px;padding:6px 10px;margin:4px 6px 0 0;font-size:.95rem}
-    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .card{background:#f7fbff;border:1px solid #e3eef8;border-radius:12px;padding:18px}
-    .card h3{margin:0 0 6px 0}
-    footer{margin:28px 0 0;background:var(--blue-900);color:#fff}
-    footer .wrap{justify-content:center;padding:16px 20px}
-    .logo-svg{width:72px;height:72px} /* enlarged */
+    
+    /* Features Grid */
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:60px 0}
+    .feature-card{background:#fff;border-radius:20px;padding:40px 30px;text-align:center;box-shadow:0 10px 30px rgba(13,45,76,.08);transition:all 0.3s ease;border:1px solid #e5eef6}
+    .feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(13,45,76,.15)}
+    .feature-card .icon{width:80px;height:80px;margin:0 auto 20px;background:linear-gradient(135deg,var(--blue-300),var(--green-600));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem}
+    .feature-card h3{font-size:1.4rem;margin:0 0 15px;color:var(--blue-900);font-weight:700}
+    .feature-card p{color:var(--gray-600);line-height:1.7}
+    
+    /* Stats Section */
+    .stats{background:var(--blue-900);color:#fff;padding:60px 20px;margin:60px -20px;text-align:center}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1000px;margin:0 auto}
+    .stat-item h3{font-size:3rem;margin:0 0 10px;color:var(--blue-300);font-weight:800}
+    .stat-item p{font-size:1.1rem;opacity:0.9;margin:0}
+    
+    /* Solutions Preview */
+    .solutions-preview{margin:80px 0}
+    .solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin:40px 0}
+    .solution-card{background:#fff;border-radius:16px;padding:25px;border-left:5px solid var(--green-600);box-shadow:0 6px 20px rgba(0,0,0,0.08);transition:all 0.3s ease}
+    .solution-card:hover{transform:translateX(10px);box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+    .solution-card h4{color:var(--blue-900);margin:0 0 10px;font-size:1.2rem;font-weight:600}
+    .solution-card p{color:var(--gray-600);font-size:0.95rem;margin:0}
+    .solution-card .status{display:inline-block;background:var(--green-100);color:var(--green-600);padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-top:10px}
+    
+    /* Updated existing styles */
+    .bubble{background:#fff;border:1px solid #e5eef6;border-radius:16px;padding:30px;font-size:1.15rem;line-height:1.6;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+    .pill{display:inline-block;background:var(--green-100);border:1px solid var(--green-600);color:var(--green-600);border-radius:999px;padding:8px 16px;margin:4px 8px 0 0;font-size:.95rem;font-weight:600;transition:all 0.3s ease}
+    .pill:hover{background:var(--green-600);color:#fff}
+    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+    .card{background:#fff;border:1px solid #e3eef8;border-radius:16px;padding:25px;box-shadow:0 6px 20px rgba(0,0,0,0.08);transition:all 0.3s ease}
+    .card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.12)}
+    .card h3{margin:0 0 10px 0;color:var(--blue-900);font-size:1.3rem;font-weight:600}
+    
+    /* Footer */
+    footer{margin:80px 0 0;background:var(--blue-900);color:#fff}
+    footer .wrap{justify-content:center;padding:40px 20px;text-align:center}
+    .logo-svg{width:80px;height:80px;transition:all 0.3s ease}
+    .logo-svg:hover{transform:rotate(360deg)}
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1{font-size:2.5rem}
+      .hero p{font-size:1.1rem}
+      .features-grid{grid-template-columns:1fr;gap:20px}
+      nav .wrap{gap:20px}
+      nav a{font-size:0.9rem}
+      .brand h1{font-size:1.5rem}
+      .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
+      .stat-item h3{font-size:2.2rem}
+    }
+    
+    @media (max-width: 480px) {
+      .hero{padding:60px 20px}
+      .hero h1{font-size:2rem}
+      .cta-button{padding:14px 28px;font-size:1rem}
+      .feature-card{padding:30px 20px}
+      .stats-grid{grid-template-columns:1fr;gap:25px}
+    }
   </style>
 </head>
 <body>
@@ -84,57 +155,333 @@
   <nav>
     <div class="wrap">
       <a href="#home" class="active" onclick="showSection('home', this)">Home</a>
+      <a href="#solucoes" onclick="showSection('solucoes', this)">Soluções</a>
       <a href="#equipe" onclick="showSection('equipe', this)">Equipe</a>
-      <a href="#noticias" onclick="showSection('noticias', this)">Notícias</a>
+      <a href="#pesquisa" onclick="showSection('pesquisa', this)">Pesquisa</a>
       <a href="#contato" onclick="showSection('contato', this)">Contato</a>
     </div>
   </nav>
 
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>SDG Hub</h1>
+    <p>Plataforma inteligente para sustentabilidade portuária. Transforme dados em ações sustentáveis com nossas ferramentas de análise, monitoramento e otimização.</p>
+    <a href="#solucoes" class="cta-button" onclick="showSection('solucoes', document.querySelector('nav a[href=\'#solucoes\']'))">Explorar Soluções</a>
+  </div>
+
   <main>
     <section id="home" class="active">
+      <!-- Features Grid -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Dashboards Inteligentes</h3>
+          <p>Visualize dados de sustentabilidade em tempo real com painéis interativos e indicadores-chave de performance ambiental.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🤖</div>
+          <h3>Agentes de IA</h3>
+          <p>Assistentes inteligentes que analisam dados portuários e fornecem insights personalizados para otimização sustentável.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🌱</div>
+          <h3>Calculadora de Pegada de Carbono</h3>
+          <p>Meça e monitore emissões de CO₂ das operações portuárias com precisão e relatórios detalhados.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📋</div>
+          <h3>Frameworks de Avaliação</h3>
+          <p>Questionários estruturados baseados em padrões internacionais para avaliar sustentabilidade portuária.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h3>Energy Management</h3>
+          <p>Otimize o consumo energético com monitoramento inteligente e recomendações para energias renováveis.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📈</div>
+          <h3>Análise Preditiva</h3>
+          <p>Preveja tendências ambientais e identifique oportunidades de melhoria antes que se tornem problemas.</p>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>17</h3>
+            <p>Objetivos de Desenvolvimento Sustentável</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Indicadores Monitorados</p>
+          </div>
+          <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Monitoramento Contínuo</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Baseado em Dados</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
       <div class="bubble">
-        <h2 style="margin-top:0">Sobre</h2>
-        <p>O SDG Hub é um núcleo colaborativo focado em acelerar soluções alinhadas aos Objetivos de Desenvolvimento Sustentável (ODS), com ênfase em portos, energia e cidades.</p>
-        <div>
+        <h2 style="margin-top:0;color:var(--blue-900);font-size:2rem">Sobre o SDG Hub</h2>
+        <p>O SDG Hub é uma plataforma colaborativa focada em acelerar soluções alinhadas aos Objetivos de Desenvolvimento Sustentável (ODS), com ênfase em portos, energia e cidades sustentáveis. Combinamos pesquisa aplicada, tecnologia avançada e expertise técnica para criar ferramentas que transformam dados em ações concretas para a sustentabilidade.</p>
+        <div style="margin-top:30px">
           <span class="pill">Pesquisa aplicada & indicadores</span>
           <span class="pill">Descarbonização & transição energética</span>
           <span class="pill">Cidades sustentáveis</span>
+          <span class="pill">Portos inteligentes</span>
+          <span class="pill">Análise de dados</span>
+          <span class="pill">Inteligência artificial</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucoes">
+      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Nossas Soluções</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Port Sustainability Dashboard</h3>
+          <p>Painel completo para monitoramento de indicadores ambientais, sociais e econômicos. Visualize KPIs em tempo real, gere relatórios automatizados e acompanhe o progresso dos ODS.</p>
+          <div style="margin-top:20px">
+            <span class="pill">Dashboard Interativo</span>
+            <span class="pill">Relatórios Automatizados</span>
+            <span class="pill">Indicadores ODS</span>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <div class="icon">🌱</div>
+          <h3>Calculadora de Pegada de Carbono</h3>
+          <p>Ferramenta avançada para medição precisa de emissões de gases de efeito estufa. Inclui diferentes escopos de emissão e metodologias reconhecidas internacionalmente.</p>
+          <div style="margin-top:20px">
+            <span class="pill">Escopo 1, 2 e 3</span>
+            <span class="pill">GHG Protocol</span>
+            <span class="pill">ISO 14064</span>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <div class="icon">🤖</div>
+          <h3>AI Sustainability Advisor</h3>
+          <p>Assistente inteligente que analisa dados operacionais e fornece recomendações personalizadas para otimização de processos e redução do impacto ambiental.</p>
+          <div style="margin-top:20px">
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Análise Preditiva</span>
+            <span class="pill">Recomendações IA</span>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <div class="icon">📋</div>
+          <h3>Framework Assessment Tool</h3>
+          <p>Sistema de questionários estruturados baseado em frameworks internacionais como EcoPorts, Green Marine e ESPO Environmental Review.</p>
+          <div style="margin-top:20px">
+            <span class="pill">EcoPorts</span>
+            <span class="pill">Green Marine</span>
+            <span class="pill">ESPO Review</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bubble" style="margin-top:50px">
+        <h3 style="color:var(--blue-900);margin-top:0">Roadmap de Desenvolvimento</h3>
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <h4>Fase 1 - Fundação (Q1 2025)</h4>
+            <p>Dashboard básico, calculadora de carbono e estrutura inicial dos questionários de framework.</p>
+            <span class="status">Em Desenvolvimento</span>
+          </div>
+          <div class="solution-card">
+            <h4>Fase 2 - Inteligência (Q2 2025)</h4>
+            <p>Implementação de agentes de IA, análise preditiva e otimização de recomendações.</p>
+            <span class="status">Planejado</span>
+          </div>
+          <div class="solution-card">
+            <h4>Fase 3 - Integração (Q3 2025)</h4>
+            <p>APIs para integração com sistemas portuários existentes e expansão de funcionalidades.</p>
+            <span class="status">Planejado</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="equipe">
-      <h2>Equipe</h2>
+      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Nossa Equipe</h2>
       <div class="team">
         <div class="card">
+          <div style="text-align:center;margin-bottom:20px">
+            <div style="width:80px;height:80px;background:linear-gradient(135deg,var(--blue-300),var(--green-600));border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff">👨‍🔬</div>
+          </div>
           <h3>Clóvis Bôsco Mendonça Oliveira</h3>
-          <p>Energias Renováveis, OPS e descarbonização em portos.</p>
-          <p><a href="https://scholar.google.com/citations?user=ts10jLQAAAAJ&hl=pt-BR&oi=sra" target="_blank">Google Acadêmico</a></p>
+          <p><strong>Especialidades:</strong> Energias Renováveis, Operações Portuárias Sustentáveis e Descarbonização em Portos.</p>
+          <p><strong>Formação:</strong> Doutor em Engenharia com foco em sustentabilidade portuária e transição energética.</p>
+          <div style="margin-top:15px">
+            <a href="https://scholar.google.com/citations?user=ts10jLQAAAAJ&hl=pt-BR&oi=sra" target="_blank" style="color:var(--blue-700);text-decoration:none;font-weight:600">📚 Google Acadêmico</a>
+          </div>
         </div>
         <div class="card">
+          <div style="text-align:center;margin-bottom:20px">
+            <div style="width:80px;height:80px;background:linear-gradient(135deg,var(--blue-300),var(--green-600));border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff">👩‍💼</div>
+          </div>
           <h3>Darliane Ribeiro Cunha</h3>
-          <p>Sustentabilidade e descarbonização em portos.</p>
-          <p><a href="https://www.linkedin.com/in/darlianecunha/" target="_blank">LinkedIn</a> · <a href="https://scholar.google.com/citations?user=BGRlXo0AAAAJ" target="_blank">Scholar</a></p>
+          <p><strong>Especialidades:</strong> Sustentabilidade Portuária, Descarbonização e Gestão Ambiental.</p>
+          <p><strong>Formação:</strong> Especialista em sustentabilidade e gestão ambiental aplicada ao setor portuário.</p>
+          <div style="margin-top:15px">
+            <a href="https://www.linkedin.com/in/darlianecunha/" target="_blank" style="color:var(--blue-700);text-decoration:none;font-weight:600;margin-right:15px">💼 LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=BGRlXo0AAAAJ" target="_blank" style="color:var(--blue-700);text-decoration:none;font-weight:600">📚 Scholar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bubble" style="margin-top:40px">
+        <h3 style="color:var(--blue-900);margin-top:0">Junte-se à Nossa Equipe</h3>
+        <p>Estamos sempre procurando por pesquisadores, desenvolvedores e especialistas em sustentabilidade para expandir nossa equipe. Se você tem paixão por tecnologia e sustentabilidade, entre em contato conosco.</p>
+        <div style="margin-top:20px">
+          <span class="pill">Pesquisadores</span>
+          <span class="pill">Desenvolvedores</span>
+          <span class="pill">Data Scientists</span>
+          <span class="pill">Especialistas em Sustentabilidade</span>
         </div>
       </div>
     </section>
 
-    <section id="noticias">
-      <h2>Notícias</h2>
+    <section id="pesquisa">
+      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Pesquisa & Desenvolvimento</h2>
+      
       <div class="bubble">
-        <!-- Conteúdo removido -->
+        <h3 style="color:var(--blue-900);margin-top:0">Linhas de Pesquisa</h3>
+        <p>Nossas pesquisas focam na interseção entre tecnologia, sustentabilidade e operações portuárias. Desenvolvemos soluções baseadas em evidências científicas e melhores práticas internacionais.</p>
+      </div>
+      
+      <div class="features-grid" style="margin:40px 0">
+        <div class="feature-card">
+          <div class="icon">🔬</div>
+          <h3>Indicadores de Sustentabilidade</h3>
+          <p>Desenvolvimento de métricas e indicadores para avaliação quantitativa da sustentabilidade portuária.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h3>Transição Energética</h3>
+          <p>Pesquisa em energias renováveis aplicadas às operações portuárias e redução da pegada de carbono.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🏙️</div>
+          <h3>Cidades Portuárias Sustentáveis</h3>
+          <p>Estudos sobre a integração entre portos e cidades para desenvolvimento urbano sustentável.</p>
+        </div>
+      </div>
+      
+      <div class="bubble">
+        <h3 style="color:var(--blue-900);margin-top:0">Publicações Recentes</h3>
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <h4>Frameworks de Sustentabilidade Portuária: Uma Análise Comparativa</h4>
+            <p>Revisão sistemática dos principais frameworks internacionais para avaliação de sustentabilidade em portos.</p>
+            <span class="status">Publicado</span>
+          </div>
+          <div class="solution-card">
+            <h4>Aplicação de IA na Otimização Energética Portuária</h4>
+            <p>Estudo sobre o uso de inteligência artificial para redução do consumo energético em operações portuárias.</p>
+            <span class="status">Em Revisão</span>
+          </div>
+          <div class="solution-card">
+            <h4>Indicadores ODS para o Setor Portuário Brasileiro</h4>
+            <p>Desenvolvimento de métricas específicas para monitoramento dos ODS no contexto portuário nacional.</p>
+            <span class="status">Em Desenvolvimento</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="contato">
-      <h2>Contato</h2>
-      <p><a href="mailto:info@sdghub.com.br">info@sdghub.com.br</a></p>
+      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Entre em Contato</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">📧</div>
+          <h3>Email</h3>
+          <p>Para parcerias, colaborações ou dúvidas sobre nossas soluções.</p>
+          <a href="mailto:info@sdghub.com.br" style="color:var(--blue-700);font-weight:600;text-decoration:none">info@sdghub.com.br</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="icon">🤝</div>
+          <h3>Parcerias</h3>
+          <p>Interessado em colaborar? Vamos construir um futuro mais sustentável juntos.</p>
+          <a href="mailto:partnerships@sdghub.com.br" style="color:var(--blue-700);font-weight:600;text-decoration:none">partnerships@sdghub.com.br</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="icon">🔬</div>
+          <h3>Pesquisa</h3>
+          <p>Para colaborações acadêmicas e projetos de pesquisa em sustentabilidade.</p>
+          <a href="mailto:research@sdghub.com.br" style="color:var(--blue-700);font-weight:600;text-decoration:none">research@sdghub.com.br</a>
+        </div>
+      </div>
+      
+      <div class="bubble" style="margin-top:50px;text-align:center">
+        <h3 style="color:var(--blue-900);margin-top:0">Acompanhe Nosso Desenvolvimento</h3>
+        <p>Estamos constantemente desenvolvendo novas funcionalidades e melhorando nossas soluções. Inscreva-se para receber atualizações sobre novos lançamentos e pesquisas.</p>
+        <div style="margin-top:30px">
+          <span class="pill">Newsletter Mensal</span>
+          <span class="pill">Atualizações de Produtos</span>
+          <span class="pill">Publicações Científicas</span>
+        </div>
+        <div style="margin-top:30px">
+          <a href="#" class="cta-button">Inscrever-se para Atualizações</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <small>© 2025 SDG Hub</small>
+    <div class="wrap" style="flex-direction:column;gap:30px">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center">
+        <svg class="logo-svg" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g2" x1="0" x2="1">
+              <stop offset="0" stop-color="#3aa0e6"/>
+              <stop offset="1" stop-color="#059669"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="66" r="16" fill="url(#g2)" />
+          <circle cx="60" cy="66" r="42" fill="none" stroke="url(#g2)" stroke-opacity=".25" stroke-width="2"/>
+          <g stroke="url(#g2)" stroke-width="3" fill="#3aa0e6">
+            <line x1="60" y1="66" x2="18" y2="32"/><circle cx="18" cy="32" r="4.2"/>
+            <line x1="60" y1="66" x2="38" y2="20"/><circle cx="38" cy="20" r="3.8"/>
+            <line x1="60" y1="66" x2="62" y2="16"/><circle cx="62" cy="16" r="4.6"/>
+            <line x1="60" y1="66" x2="86" y2="20"/><circle cx="86" cy="20" r="4.1"/>
+            <line x1="60" y1="66" x2="104" y2="36"/><circle cx="104" cy="36" r="4.3"/>
+            <line x1="60" y1="66" x2="110" y2="70"/><circle cx="110" cy="70" r="4.0"/>
+            <line x1="60" y1="66" x2="98" y2="96"/><circle cx="98" cy="96" r="4.2"/>
+            <line x1="60" y1="66" x2="76" y2="108"/><circle cx="76" cy="108" r="4.0"/>
+            <line x1="60" y1="66" x2="44" y2="108"/><circle cx="44" cy="108" r="4.1"/>
+            <line x1="60" y1="66" x2="22" y2="96"/><circle cx="22" cy="96" r="4.0"/>
+            <line x1="60" y1="66" x2="12" y2="68"/><circle cx="12" cy="68" r="3.8"/>
+            <line x1="60" y1="66" x2="20" y2="50"/><circle cx="20" cy="50" r="3.8"/>
+            <line x1="60" y1="66" x2="46" y2="44"/><circle cx="46" cy="44" r="3.6"/>
+            <line x1="60" y1="66" x2="78" y2="46"/><circle cx="78" cy="46" r="3.6"/>
+            <line x1="60" y1="66" x2="84" y2="74"/><circle cx="84" cy="74" r="3.6"/>
+            <line x1="60" y1="66" x2="40" y2="82"/><circle cx="40" cy="82" r="3.6"/>
+          </g>
+        </svg>
+        <div>
+          <h3 style="margin:0;font-size:1.5rem">SDG Hub</h3>
+          <p style="margin:5px 0 0;opacity:0.8">Conectando inovação, pesquisa e sustentabilidade</p>
+        </div>
+      </div>
+      
+      <div style="text-align:center;border-top:1px solid rgba(255,255,255,0.2);padding-top:30px;width:100%">
+        <p style="margin:0;opacity:0.8">© 2025 SDG Hub. Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
