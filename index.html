@@ -37,7 +37,7 @@
     nav a.active,nav a:hover{border-color:#fff;transform:translateY(-2px)}
     
     /* Hero Section */
-    .hero{background:linear-gradient(135deg,rgba(15,94,140,0.95),rgba(58,160,230,0.95)),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.1)"/></svg>');background-size:cover;color:#fff;text-align:center;padding:80px 20px;margin-bottom:0}
+    .hero{background:linear-gradient(135deg,rgba(15,94,140,0.95),rgba(58,160,230,0.95)),url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 300\"><path d=\"M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,300 L0,300 Z\" fill=\"rgba(255,255,255,0.1)\"/></svg>');background-size:cover;color:#fff;text-align:center;padding:80px 20px;margin-bottom:0}
     .hero h1{font-size:3.5rem;margin:0 0 20px;font-weight:800;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
     .hero p{font-size:1.3rem;max-width:600px;margin:0 auto 40px;opacity:0.95;font-weight:300}
     .cta-button{display:inline-block;background:var(--green-600);color:#fff;padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(5,150,105,0.3)}
@@ -48,7 +48,7 @@
     section{display:none;margin:40px 0}
     section.active{display:block}
     
-    /* Features Grid */
+    /* Grid & cards (kept for other sections) */
     .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:60px 0}
     .feature-card{background:#fff;border-radius:20px;padding:40px 30px;text-align:center;box-shadow:0 10px 30px rgba(13,45,76,.08);transition:all 0.3s ease;border:1px solid #e5eef6}
     .feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(13,45,76,.15)}
@@ -56,7 +56,7 @@
     .feature-card h3{font-size:1.4rem;margin:0 0 15px;color:var(--blue-900);font-weight:700}
     .feature-card p{color:var(--gray-600);line-height:1.7}
     
-    /* Stats Section */
+    /* Stats (kept styles in case needed elsewhere) */
     .stats{background:var(--blue-900);color:#fff;padding:60px 20px;margin:60px -20px;text-align:center}
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1000px;margin:0 auto}
     .stat-item h3{font-size:3rem;margin:0 0 10px;color:var(--blue-300);font-weight:800}
@@ -75,7 +75,7 @@
     .bubble{background:#fff;border:1px solid #e5eef6;border-radius:16px;padding:30px;font-size:1.15rem;line-height:1.6;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
     .pill{display:inline-block;background:var(--green-100);border:1px solid var(--green-600);color:var(--green-600);border-radius:999px;padding:8px 16px;margin:4px 8px 0 0;font-size:.95rem;font-weight:600;transition:all 0.3s ease}
     .pill:hover{background:var(--green-600);color:#fff}
-    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+    .team{display:flex;flex-direction:column;gap:25px}
     .card{background:#fff;border:1px solid #e3eef8;border-radius:16px;padding:25px;box-shadow:0 6px 20px rgba(0,0,0,0.08);transition:all 0.3s ease}
     .card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.12)}
     .card h3{margin:0 0 10px 0;color:var(--blue-900);font-size:1.3rem;font-weight:600}
@@ -145,9 +145,9 @@
       </svg>
       <div class="brand">
         <div>
-          <h1>SDG Hub</h1>
-          <p>Conectando inovação, pesquisa e sustentabilidade</p>
-        </div>
+          <h1>SDG Hub</h1><p>Conectando inovação, pesquisa e sustentabilidade</p>
+<p style="margin-top:6px;font-size:1rem;font-weight:600;color:var(--blue-100);opacity:.95;">info@sdghub.com.br</p>
+<p style="margin-top:6px;font-size:1rem;font-weight:500;">️ </p></div>
       </div>
     </div>
   </header>
@@ -158,288 +158,115 @@
       <a href="#solucoes" onclick="showSection('solucoes', this)">Soluções</a>
       <a href="#equipe" onclick="showSection('equipe', this)">Equipe</a>
       <a href="#pesquisa" onclick="showSection('pesquisa', this)">Pesquisa</a>
-      <a href="#contato" onclick="showSection('contato', this)">Contato</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <div class="hero">
-    <h1>SDG Hub</h1>
-    <p>Plataforma inteligente para sustentabilidade portuária. Transforme dados em ações sustentáveis com nossas ferramentas de análise, monitoramento e otimização.</p>
+    <h1>SDG Hub</h1><p>Plataforma inteligente para sustentabilidade portuária. Transforme dados em ações sustentáveis com nossas ferramentas de análise, monitoramento e otimização.</p>
     <a href="#solucoes" class="cta-button" onclick="showSection('solucoes', document.querySelector('nav a[href=\'#solucoes\']'))">Explorar Soluções</a>
   </div>
 
   <main>
-    <section id="home" class="active">
-      <!-- Features Grid -->
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">📊</div>
-          <h3>Dashboards Inteligentes</h3>
-          <p>Visualize dados de sustentabilidade em tempo real com painéis interativos e indicadores-chave de performance ambiental.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">🤖</div>
-          <h3>Agentes de IA</h3>
-          <p>Assistentes inteligentes que analisam dados portuários e fornecem insights personalizados para otimização sustentável.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">🌱</div>
-          <h3>Calculadora de Pegada de Carbono</h3>
-          <p>Meça e monitore emissões de CO₂ das operações portuárias com precisão e relatórios detalhados.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">📋</div>
-          <h3>Frameworks de Avaliação</h3>
-          <p>Questionários estruturados baseados em padrões internacionais para avaliar sustentabilidade portuária.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">⚡</div>
-          <h3>Energy Management</h3>
-          <p>Otimize o consumo energético com monitoramento inteligente e recomendações para energias renováveis.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">📈</div>
-          <h3>Análise Preditiva</h3>
-          <p>Preveja tendências ambientais e identifique oportunidades de melhoria antes que se tornem problemas.</p>
-        </div>
-      </div>
+    
+      
 
-      <!-- Stats Section -->
-      <div class="stats">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <h3>17</h3>
-            <p>Objetivos de Desenvolvimento Sustentável</p>
-          </div>
-          <div class="stat-item">
-            <h3>50+</h3>
-            <p>Indicadores Monitorados</p>
-          </div>
-          <div class="stat-item">
-            <h3>24/7</h3>
-            <p>Monitoramento Contínuo</p>
-          </div>
-          <div class="stat-item">
-            <h3>100%</h3>
-            <p>Baseado em Dados</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- About Section -->
-      <div class="bubble">
-        <h2 style="margin-top:0;color:var(--blue-900);font-size:2rem">Sobre o SDG Hub</h2>
-        <p>O SDG Hub é uma plataforma colaborativa focada em acelerar soluções alinhadas aos Objetivos de Desenvolvimento Sustentável (ODS), com ênfase em portos, energia e cidades sustentáveis. Combinamos pesquisa aplicada, tecnologia avançada e expertise técnica para criar ferramentas que transformam dados em ações concretas para a sustentabilidade.</p>
-        <div style="margin-top:30px">
-          <span class="pill">Pesquisa aplicada & indicadores</span>
-          <span class="pill">Descarbonização & transição energética</span>
-          <span class="pill">Cidades sustentáveis</span>
-          <span class="pill">Portos inteligentes</span>
-          <span class="pill">Análise de dados</span>
-          <span class="pill">Inteligência artificial</span>
-        </div>
-      </div>
-    </section>
-
+    
     <section id="solucoes">
       <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Nossas Soluções</h2>
-      
+
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">📊</div>
-          <h3>Port Sustainability Dashboard</h3>
-          <p>Painel completo para monitoramento de indicadores ambientais, sociais e econômicos. Visualize KPIs em tempo real, gere relatórios automatizados e acompanhe o progresso dos ODS.</p>
-          <div style="margin-top:20px">
-            <span class="pill">Dashboard Interativo</span>
-            <span class="pill">Relatórios Automatizados</span>
-            <span class="pill">Indicadores ODS</span>
-          </div>
-        </div>
-        
-        <div class="feature-card">
+        <a class="feature-card" href="https://darlianecunha.github.io/atributosods/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">
+          <div class="icon">🧭</div>
+          <h3>Atributos ODS</h3>
+          <p>Modelo e visualizações para indicadores alinhados aos Objetivos de Desenvolvimento Sustentável.</p>
+        </a>
+
+        <a class="feature-card" href="https://darlianecunha.github.io/carbonport/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">
           <div class="icon">🌱</div>
-          <h3>Calculadora de Pegada de Carbono</h3>
-          <p>Ferramenta avançada para medição precisa de emissões de gases de efeito estufa. Inclui diferentes escopos de emissão e metodologias reconhecidas internacionalmente.</p>
-          <div style="margin-top:20px">
-            <span class="pill">Escopo 1, 2 e 3</span>
-            <span class="pill">GHG Protocol</span>
-            <span class="pill">ISO 14064</span>
-          </div>
-        </div>
-        
-        <div class="feature-card">
+          <h3>CarbonPort</h3>
+          <p>Painel de pegada de carbono para navios e rebocadores com foco em operações portuárias.</p>
+        </a>
+
+        <a class="feature-card" href="https://darlianecunha.github.io/blueport-ia/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">
           <div class="icon">🤖</div>
-          <h3>AI Sustainability Advisor</h3>
-          <p>Assistente inteligente que analisa dados operacionais e fornece recomendações personalizadas para otimização de processos e redução do impacto ambiental.</p>
-          <div style="margin-top:20px">
-            <span class="pill">Machine Learning</span>
-            <span class="pill">Análise Preditiva</span>
-            <span class="pill">Recomendações IA</span>
-          </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="icon">📋</div>
-          <h3>Framework Assessment Tool</h3>
-          <p>Sistema de questionários estruturados baseado em frameworks internacionais como EcoPorts, Green Marine e ESPO Environmental Review.</p>
-          <div style="margin-top:20px">
-            <span class="pill">EcoPorts</span>
-            <span class="pill">Green Marine</span>
-            <span class="pill">ESPO Review</span>
-          </div>
-        </div>
-      </div>
+          <h3>BluePort</h3>
+          <p>Assistente de IA para identificação e classificação de resíduos no ambiente portuário.</p>
+        </a>
+
+        <a class="feature-card" href="https://darlianecunha.github.io/ops/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">
+          <div class="icon">⚡</div>
+          <h3>OPS for the Green Hub</h3>
+          <p>Estratégia de Onshore Power Supply (OPS) para hubs verdes e descarbonização portuária.</p>
+        </a>
       
-      <div class="bubble" style="margin-top:50px">
-        <h3 style="color:var(--blue-900);margin-top:0">Roadmap de Desenvolvimento</h3>
-        <div class="solutions-grid">
-          <div class="solution-card">
-            <h4>Fase 1 - Fundação (Q1 2025)</h4>
-            <p>Dashboard básico, calculadora de carbono e estrutura inicial dos questionários de framework.</p>
-            <span class="status">Em Desenvolvimento</span>
-          </div>
-          <div class="solution-card">
-            <h4>Fase 2 - Inteligência (Q2 2025)</h4>
-            <p>Implementação de agentes de IA, análise preditiva e otimização de recomendações.</p>
-            <span class="status">Planejado</span>
-          </div>
-          <div class="solution-card">
-            <h4>Fase 3 - Integração (Q3 2025)</h4>
-            <p>APIs para integração com sistemas portuários existentes e expansão de funcionalidades.</p>
-            <span class="status">Planejado</span>
-          </div>
-        </div>
-      </div>
+      <p style="text-align:center;margin-top:24px;font-size:1.1rem;color:var(--blue-900);font-weight:600;"><span style="color:var(--blue-900)">️</span> </p></div>
     </section>
 
+
+    
     <section id="equipe">
-      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Nossa Equipe</h2>
+      
       <div class="team">
         <div class="card">
-          <div style="text-align:center;margin-bottom:20px">
-            <div style="width:80px;height:80px;background:linear-gradient(135deg,var(--blue-300),var(--green-600));border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff">👨‍🔬</div>
-          </div>
           <h3>Clóvis Bôsco Mendonça Oliveira</h3>
           <p><strong>Especialidades:</strong> Energias Renováveis, Operações Portuárias Sustentáveis e Descarbonização em Portos.</p>
-          <p><strong>Formação:</strong> Doutor em Engenharia com foco em sustentabilidade portuária e transição energética.</p>
-          <div style="margin-top:15px">
-            <a href="https://scholar.google.com/citations?user=ts10jLQAAAAJ&hl=pt-BR&oi=sra" target="_blank" style="color:var(--blue-700);text-decoration:none;font-weight:600">📚 Google Acadêmico</a>
+          <p><strong>Formação:</strong> Doutor em Engenharia com foco em energias renováveis, transição energética e OPS nos Portos.</p>
+          <div style="margin-top:10px">
+            <a href="https://scholar.google.com/citations?user=ts10jLQAAAAJ&hl=pt-BR&oi=sra" target="_blank" style="color:var(--blue-900);text-decoration:none;font-weight:600">Google Acadêmico</a>
           </div>
         </div>
+
         <div class="card">
-          <div style="text-align:center;margin-bottom:20px">
-            <div style="width:80px;height:80px;background:linear-gradient(135deg,var(--blue-300),var(--green-600));border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff">👩‍💼</div>
-          </div>
           <h3>Darliane Ribeiro Cunha</h3>
           <p><strong>Especialidades:</strong> Sustentabilidade Portuária, Descarbonização e Gestão Ambiental.</p>
-          <p><strong>Formação:</strong> Especialista em sustentabilidade e gestão ambiental aplicada ao setor portuário.</p>
-          <div style="margin-top:15px">
-            <a href="https://www.linkedin.com/in/darlianecunha/" target="_blank" style="color:var(--blue-700);text-decoration:none;font-weight:600;margin-right:15px">💼 LinkedIn</a>
-            <a href="https://scholar.google.com/citations?user=BGRlXo0AAAAJ" target="_blank" style="color:var(--blue-700);text-decoration:none;font-weight:600">📚 Scholar</a>
+          <p><strong>Formação:</strong> Doutora em Finanças com foco em Sustentabilidade e IA</p>
+          <div style="margin-top:10px;display:flex;gap:16px;flex-wrap:wrap">
+            <a href="https://www.linkedin.com/in/darlianecunha/" target="_blank" style="color:var(--blue-900);text-decoration:none;font-weight:600">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=BGRlXo0AAAAJ&hl=pt-BR" target="_blank" style="color:var(--blue-900);text-decoration:none;font-weight:600">Google Acadêmico</a>
           </div>
         </div>
-      </div>
-      
-      <div class="bubble" style="margin-top:40px">
-        <h3 style="color:var(--blue-900);margin-top:0">Junte-se à Nossa Equipe</h3>
-        <p>Estamos sempre procurando por pesquisadores, desenvolvedores e especialistas em sustentabilidade para expandir nossa equipe. Se você tem paixão por tecnologia e sustentabilidade, entre em contato conosco.</p>
-        <div style="margin-top:20px">
-          <span class="pill">Pesquisadores</span>
-          <span class="pill">Desenvolvedores</span>
-          <span class="pill">Data Scientists</span>
-          <span class="pill">Especialistas em Sustentabilidade</span>
+
+        <div class="card">
+          <h3>Markus Dannyllo Carneiro Costa</h3>
+          <p><strong>Especialidades:</strong> Auditoria, Indicadores e Python</p>
+          <p><strong>Formação:</strong> Mestre em Energia e Ambiente</p>
+          <div style="margin-top:10px">
+            <a href="https://www.linkedin.com/in/markuscarneiro/" target="_blank" style="color:var(--blue-900);text-decoration:none;font-weight:600">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Vitor Renato Pereira Santos</h3>
+          <p><strong>Especialidades:</strong> Descarbonização e Operações Portuárias</p>
+          <p><strong>Formação:</strong> Mestre em Energia e Ambiente</p>
+          <div style="margin-top:10px">
+            <a href="https://www.linkedin.com/in/vitor-santos-72229775/" target="_blank" style="color:var(--blue-900);text-decoration:none;font-weight:600">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
 
+
+    
     <section id="pesquisa">
-      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Pesquisa & Desenvolvimento</h2>
+      
       
       <div class="bubble">
-        <h3 style="color:var(--blue-900);margin-top:0">Linhas de Pesquisa</h3>
-        <p>Nossas pesquisas focam na interseção entre tecnologia, sustentabilidade e operações portuárias. Desenvolvemos soluções baseadas em evidências científicas e melhores práticas internacionais.</p>
-      </div>
+        <p><strong>Cunha, D.R., Costa, M.D.C., Oliveira, C.B.M., & Pereira, N.N.</strong> (2025). <em>SDG Attributes: A Sustainability Assessment Framework for Brazilian Ports.</em> <strong>Marine Policy (Q1).</strong> <a href="https://doi.org/10.1016/j.marpol.2025.106841" target="_blank">https://doi.org/10.1016/j.marpol.2025.106841</a><br>Indexed: Scopus</p>
+
+        <p><strong>Diniz, N.V., Cunha, D.R., Porte, M.S., Oliveira, C.B.M., & Fernandes, F.F.</strong> (2024). <em>A Bibliometric Analysis of SDGs in the Maritime Industry and Port Sector.</em> <strong>Regional Studies in Marine Science (Q2).</strong> <a href="https://doi.org/10.1016/j.rsma.2023.103319" target="_blank">https://doi.org/10.1016/j.rsma.2023.103319</a><br>Indexed: Scopus</p>
+
+        <p><strong>Cunha, D.R., Pereira, N.N., Porte, M.S., & Campos, C.R.</strong> (2023). <em>Sustainability Practices Aimed at the SDGs: A Study in Brazilian Ports.</em> <strong>Environment, Development and Sustainability (Q1).</strong> <a href="https://doi.org/10.1007/s10668-023-03126-y" target="_blank">https://doi.org/10.1007/s10668-023-03126-y</a><br>Indexed: Scopus</p>
+
+        <p><strong>Sousa, Q., Oliveira, C.B.M., & Cunha, D.R.</strong> (2023). <em>Photovoltaic Electronic Waste in Brazil: Circular Economy Challenges.</em> <strong>Social Sciences & Humanities Open.</strong> <a href="https://doi.org/10.1016/j.ssaho.2023.100456" target="_blank">https://doi.org/10.1016/j.ssaho.2023.100456</a><br>Indexed: Scopus</p>
       
-      <div class="features-grid" style="margin:40px 0">
-        <div class="feature-card">
-          <div class="icon">🔬</div>
-          <h3>Indicadores de Sustentabilidade</h3>
-          <p>Desenvolvimento de métricas e indicadores para avaliação quantitativa da sustentabilidade portuária.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">⚡</div>
-          <h3>Transição Energética</h3>
-          <p>Pesquisa em energias renováveis aplicadas às operações portuárias e redução da pegada de carbono.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">🏙️</div>
-          <h3>Cidades Portuárias Sustentáveis</h3>
-          <p>Estudos sobre a integração entre portos e cidades para desenvolvimento urbano sustentável.</p>
-        </div>
-      </div>
-      
-      <div class="bubble">
-        <h3 style="color:var(--blue-900);margin-top:0">Publicações Recentes</h3>
-        <div class="solutions-grid">
-          <div class="solution-card">
-            <h4>Frameworks de Sustentabilidade Portuária: Uma Análise Comparativa</h4>
-            <p>Revisão sistemática dos principais frameworks internacionais para avaliação de sustentabilidade em portos.</p>
-            <span class="status">Publicado</span>
-          </div>
-          <div class="solution-card">
-            <h4>Aplicação de IA na Otimização Energética Portuária</h4>
-            <p>Estudo sobre o uso de inteligência artificial para redução do consumo energético em operações portuárias.</p>
-            <span class="status">Em Revisão</span>
-          </div>
-          <div class="solution-card">
-            <h4>Indicadores ODS para o Setor Portuário Brasileiro</h4>
-            <p>Desenvolvimento de métricas específicas para monitoramento dos ODS no contexto portuário nacional.</p>
-            <span class="status">Em Desenvolvimento</span>
-          </div>
-        </div>
-      </div>
+      <p style="text-align:center;margin-top:24px;font-size:1.1rem;color:var(--blue-900);font-weight:600;"><span style="color:var(--blue-900)">️</span> </p></div>
     </section>
 
-    <section id="contato">
-      <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--blue-900)">Entre em Contato</h2>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">📧</div>
-          <h3>Email</h3>
-          <p>Para parcerias, colaborações ou dúvidas sobre nossas soluções.</p>
-          <a href="mailto:info@sdghub.com.br" style="color:var(--blue-700);font-weight:600;text-decoration:none">info@sdghub.com.br</a>
-        </div>
-        
-        <div class="feature-card">
-          <div class="icon">🤝</div>
-          <h3>Parcerias</h3>
-          <p>Interessado em colaborar? Vamos construir um futuro mais sustentável juntos.</p>
-          <a href="mailto:partnerships@sdghub.com.br" style="color:var(--blue-700);font-weight:600;text-decoration:none">partnerships@sdghub.com.br</a>
-        </div>
-        
-        <div class="feature-card">
-          <div class="icon">🔬</div>
-          <h3>Pesquisa</h3>
-          <p>Para colaborações acadêmicas e projetos de pesquisa em sustentabilidade.</p>
-          <a href="mailto:research@sdghub.com.br" style="color:var(--blue-700);font-weight:600;text-decoration:none">research@sdghub.com.br</a>
-        </div>
-      </div>
-      
-      <div class="bubble" style="margin-top:50px;text-align:center">
-        <h3 style="color:var(--blue-900);margin-top:0">Acompanhe Nosso Desenvolvimento</h3>
-        <p>Estamos constantemente desenvolvendo novas funcionalidades e melhorando nossas soluções. Inscreva-se para receber atualizações sobre novos lançamentos e pesquisas.</p>
-        <div style="margin-top:30px">
-          <span class="pill">Newsletter Mensal</span>
-          <span class="pill">Atualizações de Produtos</span>
-          <span class="pill">Publicações Científicas</span>
-        </div>
-        <div style="margin-top:30px">
-          <a href="#" class="cta-button">Inscrever-se para Atualizações</a>
-        </div>
-      </div>
-    </section>
+
+    
   </main>
 
   <footer>
@@ -476,7 +303,7 @@
         <div>
           <h3 style="margin:0;font-size:1.5rem">SDG Hub</h3>
           <p style="margin:5px 0 0;opacity:0.8">Conectando inovação, pesquisa e sustentabilidade</p>
-        </div>
+<p style="margin-top:6px;font-size:1rem;font-weight:500;">️ </p></div>
       </div>
       
       <div style="text-align:center;border-top:1px solid rgba(255,255,255,0.2);padding-top:30px;width:100%">
